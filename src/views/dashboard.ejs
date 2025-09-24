@@ -2,9 +2,23 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to your 90-Day Goal Tracker!</p>
+
+    <div class="container">
+      <h2>Your Goals</h2>
+      <ul>
+        <% goals.forEach(goal => { %>
+          <li>
+            <strong><%= goal.title %></strong>  
+            - Target: <%= goal.target_hours %> hrs  
+            - Logged: <%= goal.logged_hours %> hrs
+          </li>
+        <% }) %>
+      </ul>
+    </div>
   </body>
 </html>
+
